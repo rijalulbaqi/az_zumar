@@ -1,0 +1,28 @@
+.custom-dopdown{
+
+}
+
+.custom-dropdown li{
+	list-style: none;
+}
+.custom-dropdown ul{
+	height: 0;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+.custom-dropdown .show{
+	height: auto;
+	overflow: hidden;
+	transition: all 0.5s;
+}
+.show .icon{
+	transform: rotate(90deg);
+}
+.custom-dropdown .icon i{
+	font-size: 10px !important;
+}
+.progress { position:relative; width:100%; }
+
+.bar { background-color: #00ff00; width:0%; height:20px; }
+
+.percent { position:absolute; display:inline-block; left:50%; color: #040608;}

@@ -1,0 +1,20 @@
+@media screen and (max-width: 575.98px) {
+  .info-jenjang-pendidikan .card {
+    margin-top: 2px;
+    color: white;
+    border-radius: 0%;
+    margin-right: 2px;
+  }
+  .logoYayasan {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767.98px) {
+  .logoYayasan {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+/*# sourceMappingURL=responsive.css.map */

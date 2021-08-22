@@ -1,0 +1,271 @@
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.garisWarnaAtas {
+    background-color: #074C74;
+    height: 16px;
+    position: absolute;
+}
+
+// Logo Yayasan
+.garisLogoYayasan {
+    height: 1px;
+    width: 90px;
+    background-color: rgba(7, 76, 116, 0.32);
+    transform: rotate(90deg);
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+.namaYayasan {
+    list-style: none;
+    margin-left: 0px;
+    padding-left: 0px;
+}
+
+.namaYayasanAtas {
+    color: #EC2E71;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    // line-height: 30px;
+    // border: 1px solid;
+}
+
+.namaYayasanBawah {
+    color: #074C74;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 48px;
+    // line-height: 60px;
+    // border: 1px solid;
+}
+
+
+
+// .logoYayasan {
+//     border: 1px solid;
+// }
+
+// .logoYayasanMedsos {
+//     border: 1px solid;
+// }
+
+// .medsos {
+//     border: 1px solid;
+// }
+
+// Garis Atas Navbar
+
+.garisAtasNavbar {
+    position: absolute;
+    // width: 1440px;
+    height: 4px;
+
+    background: #EC2E71;
+}
+
+// Navbar
+.navbar {
+    background-color: #055F93 !important;
+    // color: white !important;
+}
+
+
+.collapse .navbar-nav .nav-item .dropdown-menu {
+    background-color: #055F93;
+}
+
+.collapse .navbar-nav .nav-item .dropdown-menu a {
+    color: white;
+}
+
+.collapse .navbar-nav .nav-item .dropdown-menu a:hover {
+    color: black;
+}
+
+// Info jenjang pendidikan
+
+.slider .carousel-inner .carousel-item {
+    img {
+        max-height: 449px;
+    }
+}
+
+
+.info-jenjang-pendidikan .jenjang-tk {
+    background: rgba(128, 0, 128, 0.55);
+    box-shadow: 0px 9px 12px -3px rgba(0, 0, 0, 0.25);
+
+    .jenjang-sd {
+        background: rgba(212, 0, 0, 0.55);
+        box-shadow: 0px 9px 12px -3px rgba(0, 0, 0, 0.25);
+    }
+
+}
+
+.info-jenjang-pendidikan .jenjang-sd {
+    background: rgba(212, 0, 0, 0.55);
+    box-shadow: 0px 9px 12px -3px rgba(0, 0, 0, 0.25);
+}
+
+.info-jenjang-pendidikan .jenjang-smp {
+    background: rgba(57, 167, 142, 0.55);
+    box-shadow: 0px 9px 12px -3px rgba(0, 0, 0, 0.25);
+}
+
+.info-jenjang-pendidikan .jenjang-sma {
+    background: rgba(0, 206, 209, 0.55);
+    box-shadow: 0px 9px 12px -3px rgba(0, 0, 0, 0.25);
+}
+
+.info-jenjang-pendidikan .card {
+    margin-top: -70px;
+    color: white;
+    border-radius: 0%;
+    margin-right: 2px;
+
+}
+
+.info-jenjang-pendidikan {
+
+    background-color: #F7F7F7;
+    box-shadow: 0px 5px 11px rgba(0, 0, 0, 0.25);
+
+}
+
+.kegiatan .card {
+    border-radius: 0%;
+
+    background: #E6E6E6;
+    box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.25);
+
+}
+
+.kegiatan .card {
+    p {
+        // font-size: 23px;
+        font-weight: bold;
+    }
+}
+
+
+// Info kegiatan
+.btnBeritaSelengkapnya {
+    background: #074C74;
+    box-shadow: 0px 9px 12px -3px rgba(0, 0, 0, 0.25);
+    border-radius: 0%;
+}
+
+// Info Statistik
+
+.bgInfoData {
+    // background-image: url('assets/images/bgInfoStatistik.png');
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.75);
+    margin-top: 100px;
+}
+
+.bgInfoData img {
+    height: 70px;
+    width: 70px;
+}
+
+.infoDataSiswaJumlah {
+    font-weight: bold;
+    font-size: 65px;
+    color: white;
+}
+
+.infoDataSiswaKeterangan {
+    color: white;
+    font-size: 20px;
+}
+
+
+// card foto kegiatan
+.card-foto-kegiatan {
+    margin: 0px;
+    border: none;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    border-radius: 0%;
+    background-size: cover;
+
+}
+
+.card-foto-kegiatan-tentang {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    // width: 360px;
+    // height: 244px;
+
+}
+
+// Halaman Profil Yayasan
+.img-profil-yayasan {
+    padding: 0px;
+}
+
+.card-profil-yayasan {
+    font-family: 'Quicksand', sans-serif;
+    color: black;
+
+
+    .card-header {
+        background-color: rgba(5, 95, 147, 1);
+        color: white;
+    }
+
+    img {
+        width: 900px;
+
+    }
+}
+
+
+
+
+// FOoter
+garisAtasFooter {
+    margin-top: 150px;
+    height: 20px;
+    background: #DEDEDE;
+
+
+}
+
+.footer {
+
+    background-color: #074C74;
+}
+
+.footerKontak {
+    font-weight: bold;
+    font-size: 27px;
+    color: #FFFFFF;
+    margin-bottom: 0px;
+}
+
+.garisKontak {
+    margin-top: 0px;
+    width: 76px;
+    height: 2px;
+    background: #AAAAAA;
+}
+
+.footer span {
+    color: #FFFFFF;
+}
+
+.kotak {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+}
+
+.cr {
+    margin-bottom: 0px;
+}
