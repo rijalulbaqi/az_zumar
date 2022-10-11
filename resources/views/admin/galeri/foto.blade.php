@@ -18,6 +18,7 @@
                               <th>Foto</th>
                               <th>Judul</th>
                               <th>Deskripsi</th>
+                              <th>Tanggal</th>
                               <th>Aksi</th>
                           </tr>
                       </thead>
@@ -45,7 +46,7 @@
                         <div class="msgGagal">
                           
                         </div>
-                        <label for="foto" class="control-label">Foto</label>
+                        <label for="foto" class="control-label">Foto(Ukuran 672x576 Pixel)</label>
                         <input name="foto" type="file" class="form-control" required>
                         </div>
                         <div class="form-group">
@@ -152,6 +153,7 @@
                     {data: 'foto', name: 'foto'},
                     {data: 'judul', name: 'judul'},
                     {data: 'deskripsi', name: 'deskripsi'},
+                    {data: 'created_at', name: 'created_at'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                     
                 ],

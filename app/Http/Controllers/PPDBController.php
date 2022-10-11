@@ -7,7 +7,13 @@ use App\Models\PPDBTK;
 use App\Models\PPDBSD;
 use App\Models\PPDBSMP;
 use App\Models\PPDBSMA;
+use App\Models\Syarat;
 use DataTables;
+use App\Exports\TKExport;
+use App\Exports\SDExport;
+use App\Exports\SMPExport;
+use App\Exports\SMAExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PPDBController extends Controller
 {
@@ -15,9 +21,38 @@ class PPDBController extends Controller
     {
         $this->middleware('auth');
     }
+    public function syarat(){
+        $data['active'] = 5;
+        $syarat = Syarat::findOrFail(1);
+        return view('admin.ppdb.syarat',$data, compact('syarat'));
+    }
+    public function ubahsyarat(Request $request){
+        $data['active'] = 5;
+        $ubah = Syarat::findOrFail('1');
+        $ubah->syarat = $request->syarat;
+        $ubah->status = $request->status;
+        $ubah->save();
+        return redirect('syarat');
+    }
     public function tk(){
         $data['active'] = 5;
         return view('admin.ppdb.tk',$data);
+    }
+    public function exporttk()
+    {
+        return Excel::download(new TKExport, 'siswatk.xlsx');
+    }
+    public function exportsd()
+    {
+        return Excel::download(new SDExport, 'siswasd.xlsx');
+    }
+    public function exportsmp()
+    {
+        return Excel::download(new SMPExport, 'siswasmp.xlsx');
+    }
+    public function exportsma()
+    {
+        return Excel::download(new SMAExport, 'siswasma.xlsx');
     }
     public function showtk($id){
         $data['active'] = 5;
@@ -47,31 +82,41 @@ class PPDBController extends Controller
     ->toJson();
     }
     public function storetk(Request $request){
-        $tambah = new PPDBTK;
-        $tambah->namalengkap = $request->namalengkap;
-        $tambah->namapanggilan = $request->namapanggilan;
-        $tambah->tempatlahir = $request->tempatlahir;
-        $tambah->tanggallahir = $request->tanggallahir;
-        $tambah->jeniskelamin = $request->jeniskelamin;
-        $tambah->agama = $request->agama;
-        $tambah->anakke = $request->anakke;
-        $tambah->jumlahsaudara = $request->jumlahsaudara;
-        $tambah->alamat = $request->alamat;
-        $tambah->nomortelepon = $request->nomortelepon;
-        $tambah->namaayah = $request->namaayah;
-        $tambah->tempatlahirayah = $request->tempatlahirayah;
-        $tambah->tanggallahirayah = $request->tanggallahirayah;
-        $tambah->agamaayah = $request->agamaayah;
-        $tambah->pekerjaanayah = $request->pekerjaanayah;
-        $tambah->pendidikanayah = $request->pendidikanayah;
-        $tambah->namaibu = $request->namaibu;
-        $tambah->tempatlahiribu = $request->tempatlahiribu;
-        $tambah->tanggallahiribu = $request->tanggallahiribu;
-        $tambah->agamaibu = $request->agamaibu;
-        $tambah->pekerjaanibu = $request->pekerjaanibu;
-        $tambah->pendidikanibu = $request->pendidikanibu;
-        $tambah->save();
-        return json_encode(1);
+        $data = PPDBTK::orderByDesc('id')->where('namalengkap','like',"$request->namalengkap")->where('tanggallahir','like',"$request->tanggallahir")->get();
+        if (empty($data)) {
+            $tambah = new PPDBTK;
+            $tambah->namalengkap = $request->namalengkap;
+            $tambah->namapanggilan = $request->namapanggilan;
+            $tambah->tempatlahir = $request->tempatlahir;
+            $tambah->tanggallahir = $request->tanggallahir;
+            $tambah->jeniskelamin = $request->jeniskelamin;
+            $tambah->agama = $request->agama;
+            $tambah->anakke = $request->anakke;
+            $tambah->jumlahsaudara = $request->jumlahsaudara;
+            $tambah->alamat = $request->alamat;
+            $tambah->nomortelepon = $request->nomortelepon;
+            $tambah->namaayah = $request->namaayah;
+            $tambah->tempatlahirayah = $request->tempatlahirayah;
+            $tambah->tanggallahirayah = $request->tanggallahirayah;
+            $tambah->agamaayah = $request->agamaayah;
+            $tambah->pekerjaanayah = $request->pekerjaanayah;
+            $tambah->pendidikanayah = $request->pendidikanayah;
+            $tambah->namaibu = $request->namaibu;
+            $tambah->tempatlahiribu = $request->tempatlahiribu;
+            $tambah->tanggallahiribu = $request->tanggallahiribu;
+            $tambah->agamaibu = $request->agamaibu;
+            $tambah->pekerjaanibu = $request->pekerjaanibu;
+            $tambah->pendidikanibu = $request->pendidikanibu;
+            $tambah->save();
+            return json_encode(1);
+        }
+        elseif($data){
+            return json_encode(2);
+        }
+        else{
+            return json_encode(0);
+        }
+    
     }
     public function deletetk($id){
         $data = PPDBTK::findOrFail($id);
@@ -110,6 +155,8 @@ class PPDBController extends Controller
     ->toJson();
     }
     public function storesd(Request $request){
+        $data = PPDBSD::orderByDesc('id')->where('namalengkap','like',"$request->namalengkap")->where('tanggallahir','like',"$request->tanggallahir")->get();
+        if (empty($data)) {
         $tambah = new PPDBSD;
         $tambah->namalengkap = $request->namalengkap;
         $tambah->namapanggilan = $request->namapanggilan;
@@ -135,6 +182,13 @@ class PPDBController extends Controller
         $tambah->pendidikanibu = $request->pendidikanibu;
         $tambah->save();
         return json_encode(1);
+        }
+        elseif($data){
+            return json_encode(2);
+        }
+        else{
+            return json_encode(0);
+        }
     }
     public function deletesd($id){
         $data = PPDBSD::findOrFail($id);
@@ -173,6 +227,8 @@ class PPDBController extends Controller
     ->toJson();
     }
     public function storesmp(Request $request){
+        $data = PPDBSMP::orderByDesc('id')->where('namalengkap','like',"$request->namalengkap")->where('nisn','like',"$request->nisn")->get();
+        if (empty($data)) {
         $tambah = new PPDBSMP;
         $tambah->namalengkap = $request->namalengkap;
         $tambah->namapanggilan = $request->namapanggilan;
@@ -199,6 +255,13 @@ class PPDBController extends Controller
         $tambah->pendidikanibu = $request->pendidikanibu;
         $tambah->save();
         return json_encode(1);
+        }
+        elseif($data){
+            return json_encode(2);
+        }
+        else{
+            return json_encode(0);
+        }
     }
     public function deletesmp($id){
         $data = PPDBSMP::findOrFail($id);
@@ -237,6 +300,8 @@ class PPDBController extends Controller
     ->toJson();
     }
     public function storesma(Request $request){
+        $data = PPDBSMA::orderByDesc('id')->where('namalengkap','like',"$request->namalengkap")->where('nisn','like',"$request->nisn")->get();
+        if (empty($data)) {
         $tambah = new PPDBSMA;
         $tambah->namalengkap = $request->namalengkap;
         $tambah->namapanggilan = $request->namapanggilan;
@@ -263,6 +328,13 @@ class PPDBController extends Controller
         $tambah->pendidikanibu = $request->pendidikanibu;
         $tambah->save();
         return json_encode(1);
+        }
+        elseif($data){
+            return json_encode(2);
+        }
+        else{
+            return json_encode(0);
+        }
     }
     public function deletesma($id){
         $data = PPDBSMA::findOrFail($id);

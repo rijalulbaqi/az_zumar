@@ -1,5 +1,7 @@
 
+
       <div class="garisAtasFooter"></div>
+      <div class="garisAtasFooterSelainIndex"></div>
       <!-- awal footer -->
       <div class="container-fluid footer">
         <div class="container py-5">
@@ -10,22 +12,21 @@
               <p class="garisKontak"></p>
 
               <div>
-                <img src="images/logo email web white 1.png" alt="">
+                <img src="{{ url('assets/images/iconEmail.png') }}" alt="" width="23px" >
                 <span>example@gmail.com</span>
               </div>
 
               <div class="mt-2">
-                <img src="images/telephone white 1.png" alt="">
+                <img src="{{ url('assets/images/iconTelpon.png') }}" alt="" width="23px">
                 <span>0821 5656 6767</span>
               </div>
 
               <p class="footerKontak mt-5">Alamat</p>
               <p class="garisKontak"></p>
 
-              <div class="col-lg-6">
+              <div class="col-lg-6 pl-0">
 
-                <span>Jl. Puri Kartika Asri Arjowinangun, Arjowinangun, Kec. Kedungkandang, Kota Malang, Jawa Timur
-                  65132</span>
+                <span>Jl. Puri Kartika Asri Arjowinangun, Arjowinangun, Kec. Kedungkandang, Kota Malang, Jawa Timur 65132</span>
               </div>
 
             </div>
@@ -48,7 +49,7 @@
       <div class="container-fluid" style="background: #000000;">
 
         <div class="row d-flex text-center py-3 pb-0" style="color: #ffffff;">
-          <p>Copyright © PT Aptikma Teknologi Indonesia</p>
+          <p class="mb-0">Copyright © PT Aptikma Teknologi Indonesia</p>
         </div>
 
       </div>

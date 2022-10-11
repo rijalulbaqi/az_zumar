@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Profil;
 use App\Models\Struktur;
+use App\Models\Yayasan;
+use App\Models\Statistik;
 use DataTables;
 
 class OrganisasiController extends Controller
@@ -180,5 +182,65 @@ class OrganisasiController extends Controller
         $edit ->foto_struktur = $filename;
         $edit->save();
         return redirect('struktur_organisasi');
+    }
+    public function sambutan(){
+        $data['active'] = 2;
+        $sambutan = Yayasan::findOrFail('1');
+        return view('admin.organisasi.sambutan',$data, compact('sambutan'));
+    }
+    public function ubahsambutan(Request $request){
+        $data['active'] = 2;
+        if($request->hasFile('foto_kepala')) {
+            $edit = Yayasan::findOrFail('1');
+            $filelawas =  $edit->foto_kepala;
+            unlink(public_path("/dashboard/img/profil/").$filelawas);
+            $filebaru = $request->file('foto_kepala');
+            $filename = time().$filebaru->getClientOriginalName();
+            $filebaru->move(public_path()."/dashboard/img/profil", $filename);
+            $edit ->foto_kepala = $filename;
+            $edit->save();
+        }
+        $ubah = Yayasan::findOrFail('1');
+        $ubah->nama_kepala = $request->nama_kepala;
+        $ubah->sambutan = $request->sambutan;
+        $ubah->save();
+        return redirect('sambutan');
+    }
+    public function visimisi(){
+        $data['active'] = 2;
+        $visimisi = Yayasan::findOrFail('1');
+        return view('admin.organisasi.visimisi',$data, compact('visimisi'));
+    }
+    public function ubahvisimisi(Request $request){
+        $data['active'] = 2;
+        if($request->hasFile('foto_sekolah')) {
+            $edit = Yayasan::findOrFail('1');
+            $filelawas =  $edit->foto_sekolah;
+            unlink(public_path("/dashboard/img/profil/").$filelawas);
+            $filebaru = $request->file('foto_sekolah');
+            $filename = time().$filebaru->getClientOriginalName();
+            $filebaru->move(public_path()."/dashboard/img/profil", $filename);
+            $edit ->foto_sekolah = $filename;
+            $edit->save();
+        }
+        $ubah = Yayasan::findOrFail('1');
+        $ubah->visi = $request->visi;
+        $ubah->misi = $request->misi;
+        $ubah->save();
+        return redirect('visimisi');
+    }
+    public function statistik(){
+        $data['active'] = 2;
+        $statistik = Statistik::findOrFail('1');
+        return view('admin.organisasi.statistik',$data, compact('statistik'));
+    }
+    public function ubahstatistik(Request $request){
+        $data['active'] = 2;
+        $ubah = Statistik::findOrFail('1');
+        $ubah->murid = $request->murid;
+        $ubah->guru = $request->guru;
+        $ubah->ekstra = $request->ekstra;
+        $ubah->save();
+        return redirect('statistik');
     }
 }

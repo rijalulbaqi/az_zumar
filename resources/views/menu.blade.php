@@ -11,29 +11,98 @@
       {{-- Logo yayasan --}}
       <div class="container">
         <div class="row">
-          <div class="logoYayasan col-lg-8 d-flex align-items-center pb-4 pt-3">
+          {{-- <div class="logoYayasan col-sm-12 col-lg-2 d-flex justify-content-center pb-4 pt-3">
             <img width="137px" src="{{ url('assets/images/logoYayasan.png') }}" alt="Logo_Yayasan_Pendidikan_Tahfidz_Az-Zumar">
-            <div class="garisLogoYayasan"></div>
-            <div class="label-logo">
-              <p class="namaYayasanAtas mb-0 p-0">YAYASAN PENDIDIKAN</p>
-              <p class="namaYayasanBawah mb-0 mt-0 p-0">TAHFIDZ AZ-ZUMAR</p>
+            <div class="garisLogoYayasan d-none d-sm-block"></div>
+          </div>
+          
+          <div class="col-sm-12 col-lg-6 label-logo logoYayasan d-flex align-items-center ">
+            <div class="row">
+              <div class="col d-flex align-items-center">
+                <p class="namaYayasanAtas mb-0 p-0 ">YAYASAN PENDIDIKAN</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col d-flex align-items-center">
+                <p class="namaYayasanBawah mb-0 mt-0 p-0">TAHFIDZ AZ-ZUMAR</p>
+              </div>
             </div>
           </div>
 
-           
+            <div class="logoYayasanMedsos col-lg-4 d-flex align-items-center justify-content-end">
 
-          <div class="logoYayasanMedsos col-lg-4 d-flex align-items-center justify-content-end">
+              <div class="row">
+                <div class="col d-none d-sm-block">
+                  <img width="33px" src="{{ url('assets/images/iconFB.png') }}" alt="">
+                  <img width="33px" src="{{ url('assets/images/iconIG.png') }}" alt="">
+                  <img width="33px" src="{{ url('assets/images/iconTW.png') }}" alt="">
+                  <img width="33px"src="{{ url('assets/images/iconYT.png') }}" alt="">
+                </div>
+              </div>
 
-            <div class="row">
-              <div class="col">
-                <img width="33px" src="{{ url('assets/images/iconFB.png') }}" alt="">
-                <img width="33px" src="{{ url('assets/images/iconIG.png') }}" alt="">
-                <img width="33px" src="{{ url('assets/images/iconTW.png') }}" alt="">
-                <img width="33px"src="{{ url('assets/images/iconYT.png') }}" alt="">
+            </div> --}}
+
+
+            {{-- anyar --}}
+
+            {{-- visible only on lg --}}
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-12 col-lg-2 d-flex justify-content-center align-items-center py-4 logoYayasan">
+                  <img width="137px;" src="{{ url('assets/images/logoYayasan.png') }}" alt="" class="img-fluid">
+                </div>
+                <div class="col-sm-12 col-lg-5 d-flex align-items-center justify-content-center p-0 logoYayasan">
+                  <div class="garisLogo d-none d-sm-block"></div>
+                  <div class="label-logo ">
+                    <p class="namaAtas mb-0">YAYASAN PENDIDIKAN</p>
+                    <p class="namaBawah mb-0">TAHFIDZ AZ-ZUMAR</p>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-lg-5 d-flex align-items-center p-0 logoYayasan">
+                  <div class="col d-none d-sm-block">
+                    <table align="right">
+                      <tr height="70">
+                        <td colspan="2"></td>
+                        <td colspan="2">
+                            <img width="33px" src="{{ url('assets/images/iconFB.png') }}" alt="">
+                            <img width="33px" src="{{ url('assets/images/iconIG.png') }}" alt="">
+                            <img width="33px" src="{{ url('assets/images/iconTW.png') }}" alt="">
+                            <img width="33px"src="{{ url('assets/images/iconYT.png') }}" alt="">
+                        </td>  
+                      </tr> 
+                      <tr>
+                        <td rowspan="2"><img src="{{ url('assets/images/emailHeader.png') }}" width="50" alt=""></td>
+                        <td class="emailHeader">Email Us : </td>
+                        <td rowspan="2" class="telpHeader"><img src="{{ url('assets/images/telpHeader.png') }}" width="50" alt=""></td>
+                        <td class="telpHeaderAtas">Call Us : </td>
+                      </tr>
+                      <tr>
+                        <td class="emailHeaderBawah">Ketika@gmail.com &nbsp;</td>
+                        <td class="telpHeaderBawah">Telepon Saya</td>
+                      </tr>
+                    </table>
+                  </div>
+                </div>
               </div>
             </div>
 
-          </div>
+            {{-- mobile --}}
+            {{-- visible only on sm --}}
+            {{-- <div class="container">
+              <div class="row">
+                <div class="col-sm-12 col-lg-7 d-flex align-items-center p-4 logoYayasan">
+
+                  <img width="137px;" src="{{ url('assets/images/logoYayasan.png') }}" alt="" class="img-fluid">
+
+                  <div class="garisLogo d-sm-none d-md-block"></div>
+
+                  <div class="col-sm-12 label-logo">
+                    <p class="namaAtas mb-0">YAYASAN a</p>
+                    <p class="namaBawah mb-0">TAHFIDZ AZ-ZUMAR</p>
+                  </div>
+                </div>
+              </div>
+            </div> --}}
           
         </div>
       </div>
@@ -54,8 +123,16 @@
               <li class="nav-item mx-3">
                 <a class="nav-link <?php echo ($active == 1) ? "active" : ""; ?>" aria-current="page" href="{{ url('/') }}">BERANDA</a>
               </li>
-              <li class="nav-item mx-3">
-                <a class="nav-link <?php echo ($active == 2) ? "active" : ""; ?> " href="{{ url('/profilYayasan') }}">PROFIL YAYASAN</a>
+              <li class="nav-item dropdown mx-3">
+                <a class="nav-link <?php echo ($active == 2) ? "active" : ""; ?>  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  PROFIL YAYASAN
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{{ url('/sejarahSingkat') }}">SEJARAH SINGKAT</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/sambutanKepala') }}">SAMBUTAN KEPALA</a></li>
+                  <li><a class="dropdown-item" href="{{ url('/visiDanMisi') }}">VISI dan MISI</a></li>
+                </ul>
               </li>
               <li class="nav-item dropdown mx-3">
                 <a class="nav-link <?php echo ($active == 3) ? "active" : ""; ?>  dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -107,3 +184,8 @@
           </div>
         </div>
       </nav>
+
+
+
+
+   

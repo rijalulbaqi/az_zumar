@@ -2,15 +2,7 @@
       @section('content')
       @include('menu', array('active' => $active))
           
-      
-
-
-      {{-- header hero --}}
-      <div class="container-fluid img-profil-yayasan">
-        
-          <img src="{{ url('assets/images/profilYayasan.png') }}" class="img-fluid" alt="...">
-        
-      </div>
+    
 
       {{-- Laporan Keuangan --}}
       <div class="container card-profil-yayasan">
@@ -21,117 +13,42 @@
                 <h2>Laporan Keuangan</h2>
                 <p>Yayasan Pendidikan Tahfidz Az-Zumar</p>
               </div>
-              <div class="card-body my-4">
+              <div class="card-body my-4 table-responsive">
 
+                  <table id="table_id" class="table  display table-striped table-bordered">
+                      <thead>
+                          <tr>
+                              <th>No</th>
+                              <th>Tanggal</th>
+                              <th>Uraian</th>
+                              <th>Pemasukan</th>
+                              <th>Pengeluaran</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+  
+                        @php
+                          $no = 1;    
+                        @endphp
+                        @foreach ($laporanKeuangan as $item)
+                          <tr>
+                              <td>{{ $no++ }}</td>
+                              <td>{{ $item->tanggal }}</td>
+                              <td>{{ $item->uraian }}</td>
+                              <td>{{ $item->pemasukan }}</td>
+                              <td>{{ $item->saldo }}</td>
+                              
+                          </tr>
+                        @endforeach
+  
+                          
+  
+  
+  
+                      </tbody>
+                  </table>
+           
 
-                <table id="table_id" class="display table table-striped table-bordered data">
-                    <thead>
-                        <tr>
-                            <th>No</th>
-                            <th>Tanggal</th>
-                            <th>Uraian</th>
-                            <th>Pemasukan</th>
-                            <th>Pengeluaran</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>2</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>3</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>4</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>2</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>3</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>4</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>3</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>4</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                         <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Donasi Andi</td>
-                            <td>Rp. 100.000</td>
-                            <td>-</td>
-                        </tr>
-
-                    </tbody>
-                </table>
 
               </div>
             </div>

@@ -12,11 +12,21 @@ body {
 // Logo Yayasan
 .garisLogoYayasan {
     height: 1px;
-    width: 90px;
+    width: 100px;
     background-color: rgba(7, 76, 116, 0.32);
     transform: rotate(90deg);
-    margin-left: -1rem;
+    // margin-left: -1rem;
     margin-right: -1rem;
+}
+
+
+.garisLogoStatistik {
+    height: 1px;
+    width: 90px;
+    background-color: #FFFFFF;
+    transform: rotate(90deg);
+    // margin-left: -1rem;
+    // margin-right: -1rem;
 }
 
 .namaYayasan {
@@ -43,19 +53,107 @@ body {
     // border: 1px solid;
 }
 
+// anyar
+.garisLogo {
+    height: 1px;
+    width: 70px;
+    background-color: rgba(7, 76, 116, 0.32);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-left: -8rem;
+}
+
+.garisStat {
+    height: 1px;
+    width: 70px;
+    background-color: white;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: 0px;
+    margin-left: -220px;
+
+}
 
 
-// .logoYayasan {
-//     border: 1px solid;
-// }
 
-// .logoYayasanMedsos {
-//     border: 1px solid;
-// }
+.garisLogoStat {
+    height: 1px;
+    width: 70px;
+    background-color: rgba(7, 76, 116, 0.32);
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    margin-left: -1rem;
+}
 
-// .medsos {
-//     border: 1px solid;
-// }
+.label-logo {
+    margin-left: -1rem;
+}
+
+.namaAtas {
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    color: #EC2E71;
+}
+
+.namaBawah {
+    font-family: 'Quicksand', sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    color: #074C74;
+}
+
+.garis2 {
+    position: absolute;
+    height: 4px;
+    background: #EC2E71;
+}
+
+.emailHeader {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #EC2E71;
+}
+
+.emailHeaderBawah {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #074C74;
+}
+
+.telpHeaderAtas {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #EC2E71;
+}
+
+.telpHeaderBawah {
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    color: #074C74;
+}
+
+// akhir anyar
+
+
+
+.logoYayasan {
+    // border: 1px solid;
+}
+
+.logoYayasanMedsos {
+    border: 1px solid;
+}
+
+.medsos {
+    border: 1px solid;
+}
 
 // Garis Atas Navbar
 
@@ -72,6 +170,17 @@ body {
     background-color: #055F93 !important;
     // color: white !important;
 }
+
+.collapse .navbar-nav .nav-item a {
+    color: white;
+}
+
+.collapse .navbar-nav .nav-item .active {
+    color: #00F0FF;
+}
+
+
+
 
 
 .collapse .navbar-nav .nav-item .dropdown-menu {
@@ -90,7 +199,9 @@ body {
 
 .slider .carousel-inner .carousel-item {
     img {
-        max-height: 449px;
+        width: 100%;
+        height: 518px;
+        background-size: cover;
     }
 }
 
@@ -122,7 +233,7 @@ body {
 }
 
 .info-jenjang-pendidikan .card {
-    margin-top: -70px;
+    margin-top: -130px;
     color: white;
     border-radius: 0%;
     margin-right: 2px;
@@ -205,8 +316,14 @@ body {
 }
 
 // Halaman Profil Yayasan
-.img-profil-yayasan {
-    padding: 0px;
+.heroProfilYayasan {
+    // padding: 0px;
+
+    img {
+        width: 100%;
+        height: 574px;
+        background-image: cover;
+    }
 }
 
 .card-profil-yayasan {
@@ -216,31 +333,65 @@ body {
 
     .card-header {
         background-color: rgba(5, 95, 147, 1);
+        // background-color: rgb(170, 200, 218);
         color: white;
     }
 
     img {
-        width: 900px;
+
+        width: 100%;
+        // height: 690px;
 
     }
+
+    .card-header p {
+        margin-bottom: 0px;
+    }
+
+    .card-body p {
+        text-align: justify;
+    }
+
+    .card-galeri-foto {
+        background: #FAFAFA;
+        box-shadow: 0px 10px 33px 5px rgba(0, 0, 0, 0.25);
+        border-radius: 5px;
+    }
+
+    .card-item-foto {
+        background: #FFFFFF;
+        box-shadow: 0px 10px 25px -10px rgba(0, 0, 0, 0.25);
+        border-radius: 7px;
+    }
+
+
+
 }
 
 
 
 
 // FOoter
-garisAtasFooter {
-    margin-top: 150px;
+
+
+.garisAtasFooter {
+    // margin-top: 150px;
     height: 20px;
     background: #DEDEDE;
-
-
 }
+
+// .garisAtasFooterSelainIndex {
+//     margin-top: 150px;
+//     height: 20px;
+//     background: #DEDEDE;
+// }
 
 .footer {
 
     background-color: #074C74;
 }
+
+
 
 .footerKontak {
     font-weight: bold;
@@ -268,4 +419,49 @@ garisAtasFooter {
 
 .cr {
     margin-bottom: 0px;
+}
+
+// Foto Kegiatan
+.imgfotoKegiatan {
+    width: 100%;
+    overflow: hidden !important;
+    height: 200px;
+    overflow: hidden;
+}
+
+// sambutan kepala
+
+.heroProfilYayasan {
+    background: #F7F7F7;
+    box-shadow: 0px 9px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+// Formulir PPDB
+
+.tab-pane {
+    button {
+        background-color: #0095C5;
+        border-radius: 10px;
+
+    }
+}
+
+.card button {
+    font-weight: bold; // background: #C0C0C0;
+}
+
+.card-ppdb {
+    background: rgba(245, 245, 245, 0.7);
+    border: 5px solid #D3D3D3;
+    border-radius: 5px;
+}
+
+.hrVisiMisi {
+    // margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.garisFotoKegiatan {
+    width: 90%;
 }

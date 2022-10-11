@@ -23,6 +23,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <title>Yayasan Pendidikan Tahfidz Az-Zumar</title>
+
+    {{-- ICon --}}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
   </head>
   <body>
 
@@ -37,13 +41,17 @@
 
     {{-- data tables --}}
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.js"></script>
-
-  </body>
-
-  <script type="text/javascript">
+    <script type="text/javascript">
     $(document).ready( function () {
       $('#table_id').DataTable();
     } );
   </script>
+  <script>
+    $(document).ready( function () {
+      $('#modal').modal('show');
+    } );
+  </script>
+  </body>
+
  
 </html>

@@ -18,6 +18,7 @@
                               <th>Video</th>
                               <th>Judul</th>
                               <th>Deskripsi</th>
+                              <th>Tanggal</th>
                               <th>Aksi</th>
                           </tr>
                       </thead>
@@ -162,6 +163,7 @@
                     {data: 'video', name: 'video'},
                     {data: 'judul', name: 'judul'},
                     {data: 'deskripsi', name: 'deskripsi'},
+                    {data: 'created_at', name: 'created_at'},
                     {data: 'action', name: 'action', orderable: false, searchable: false},
                     
                 ],

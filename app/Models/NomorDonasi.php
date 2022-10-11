@@ -9,7 +9,8 @@ class NomorDonasi extends Model
 {
     protected $table = 'nomordonasi';
     protected $fillable = [
-        'nomor_whatsapp'
+        'nomor_whatsapp',
+        'deskripsi'
     ];
     public $timestamps = false;
 }

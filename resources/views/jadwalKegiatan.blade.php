@@ -5,13 +5,6 @@
       
 
 
-      {{-- header hero --}}
-      <div class="container-fluid img-profil-yayasan">
-        
-          <img src="{{ url('assets/images/profilYayasan.png') }}" class="img-fluid" alt="...">
-        
-      </div>
-
       {{-- Laporan Keuangan --}}
       <div class="container card-profil-yayasan">
         <div class="row ">
@@ -21,7 +14,7 @@
                 <h2>Jadwal Kegiatan</h2>
                 <p>Yayasan Pendidikan Tahfidz Az-Zumar</p>
               </div>
-              <div class="card-body my-4">
+              <div class="card-body my-4 table-responsive">
 
 
                 <table id="table_id" class="display table table-striped table-bordered data">
@@ -29,54 +22,20 @@
                         <tr>
                             <th>No</th>
                             <th>Tanggal</th>
+                            <th>Kegiatan</th>
                             <th>Deskripsi</th>
                         </tr>
                     </thead>
+                    @php $no=1; @endphp
                     <tbody>
+                      @foreach($jadwal_list as $item)
                         <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Baksos</td>
+                            <td>{{ $no++; }}</td>
+                            <td>{{ $item->tanggal }}</td>
+                            <td>{{ $item->kegiatan }}</td>
+                            <td>{{ $item->deskripsi }}</td>
                         </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Baksos</td>
-                        </tr>
-                        
-                        <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Baksos</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Baksos</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Baksos</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Baksos</td>
-                        </tr>
-
-                        <tr>
-                            <td>1</td>
-                            <td>22-8-2021</td>
-                            <td>Baksos</td>
-                        </tr>
-
-                       
-
+                        @endforeach
                     </tbody>
                 </table>
 

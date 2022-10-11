@@ -31,7 +31,7 @@ class GaleriController extends Controller
             return json_encode($data);
             die();
         };
-        $foto       = $file->getClientOriginalName();
+        $foto = time().$file->getClientOriginalName();
         $file->move(\public_path() ."/dashboard/img/foto", $foto);
         $tambah = new GaleriFoto;
         $tambah ->foto = $foto;
@@ -52,7 +52,7 @@ class GaleriController extends Controller
             $filelawas =  $edit->foto;
             unlink(public_path("/dashboard/img/foto/").$filelawas);
             $filebaru       = $request->file('foto');
-            $foto       = $filebaru->getClientOriginalName();
+            $foto       = time().$filebaru->getClientOriginalName();
             $filebaru->move(\public_path() ."/dashboard/img/foto", $foto);
             $namafoto = GaleriFoto::findOrFail($id);
             $namafoto ->foto = $foto;
@@ -92,6 +92,8 @@ class GaleriController extends Controller
     }
     public function deletefoto($id){
         $foto = GaleriFoto::findOrFail($id);
+        $filelawas = $foto->foto;
+        unlink(public_path("/dashboard/img/foto/").$filelawas);
         $foto->delete();
         return json_encode(1);
     }
@@ -125,7 +127,7 @@ class GaleriController extends Controller
     ->addColumn('video',function($row){
         $video = $row->video;
         return '
-        <iframe src="'.$video.'"></iframe>'; 
+        <iframe width="100" height="100" src="'.$video.'"></iframe>'; 
     })
     ->addColumn('action', function($row){
                 $urlEdit = url('editvideo',$row->id);
@@ -149,8 +151,6 @@ class GaleriController extends Controller
     public function deletevideo($id){
         $video = GaleriVideo::findOrFail($id);
         $video->delete();
-        $filelawas =  $video->video;
-        unlink(public_path("/dashboard/video/").$filelawas);
         return json_encode(1);
     }
 

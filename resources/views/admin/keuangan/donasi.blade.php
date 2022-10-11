@@ -11,7 +11,13 @@
               <button class="btn btn-sm btn-white btn-round float-right" data-toggle="modal" data-target="#tambah"><i class="material-icons">add</i> Tambah</button></h4>
             </div>
             <div class="card-body mt-3">
-              <p>Nomor Whatsapp Donasi : {{ $nomor->nomor_whatsapp }} <button class="btn btn-sm btn-success btn-round text-white" data-toggle="modal" data-target="#edit">Ganti Nomor</button></p> 
+              <p>
+              Nomor Whatsapp Donasi : {{ $nomor->nomor_whatsapp }}
+              <button class="btn btn-sm btn-success btn-round text-white float-right" data-toggle="modal" data-target="#edit">Edit</button>
+              <br>
+              {!! $nomor->deskripsi !!} 
+              </p>
+              <hr> 
               <table id="table_id" class="display table w-100">
                 <thead>
                   <tr>
@@ -79,6 +85,11 @@
                     <div class="form-group">
                       <label for="nomor_whatsapp" class="control-label">Nomor Donasi</label>
                       <input name="nomor_whatsapp" type="text" class="form-control" required value="{{ $nomor->nomor_whatsapp }}">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="deskripsi" class="ckeditor form-control" id="ckeditor" required>
+                            {{ $nomor->deskripsi }}
+                        </textarea>
                     </div>
                   </div>
                   <div class="modal-footer">

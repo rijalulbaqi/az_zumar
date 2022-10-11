@@ -17,7 +17,7 @@
                         <img width="100%" src="{{ url('dashboard/img/slider/'.$slider->foto) }}">
                         </div>
                         <div>
-                        <label for="foto" class="control-label">Foto Baru</label>
+                        <label for="foto" class="control-label">Foto Baru (Ukuran 1440x518 Pixel)</label>
                         <input name="foto" type="file" class="form-control">
                         </div>
                         <div class="form-group">

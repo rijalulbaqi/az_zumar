@@ -84,7 +84,7 @@
                                         <input name="lembaga" type="text" class="form-control" required value="{{ $yayasan->lembaga }}">
                                         </div>
                                         <div>
-                                        <label for="foto_profil" class="control-label">Ganti Foto</label>
+                                        <label for="foto_profil" class="control-label">Ganti Foto(Ukuran 2880x1148 Pixel)</label>
                                         <input name="foto_profil" type="file" class="form-control">
                                         </div>
                                         <div>
@@ -142,7 +142,7 @@
                                         <input name="lembaga" type="text" class="form-control" required value="{{ $tk->lembaga }}">
                                         </div>
                                         <div>
-                                        <label for="foto_profil" class="control-label">Ganti Foto</label>
+                                        <label for="foto_profil" class="control-label">Ganti Foto(Ukuran 2880x1148 Pixel)</label>
                                         <input name="foto_profil" type="file" class="form-control">
                                         </div>
                                         <div>
@@ -199,7 +199,7 @@
                                         <input name="lembaga" type="text" class="form-control" required value="{{ $sd->lembaga }}">
                                         </div>
                                         <div>
-                                        <label for="foto_profil" class="control-label">Ganti Foto</label>
+                                        <label for="foto_profil" class="control-label">Ganti Foto(Ukuran 2880x1148 Pixel)</label>
                                         <input name="foto_profil" type="file" class="form-control">
                                         </div>
                                         <div>
@@ -256,7 +256,7 @@
                                         <input name="lembaga" type="text" class="form-control" required value="{{ $smp->lembaga }}">
                                         </div>
                                         <div>
-                                        <label for="foto_profil" class="control-label">Ganti Foto</label>
+                                        <label for="foto_profil" class="control-label">Ganti Foto(Ukuran 2880x1148 Pixel)</label>
                                         <input name="foto_profil" type="file" class="form-control">
                                         </div>
                                         <div>
@@ -313,7 +313,7 @@
                                         <input name="lembaga" type="text" class="form-control" required value="{{ $sma->lembaga }}">
                                         </div>
                                         <div>
-                                        <label for="foto_profil" class="control-label">Ganti Foto</label>
+                                        <label for="foto_profil" class="control-label">Ganti Foto(Ukuran 2880x1148 Pixel)</label>
                                         <input name="foto_profil" type="file" class="form-control">
                                         </div>
                                         <div>

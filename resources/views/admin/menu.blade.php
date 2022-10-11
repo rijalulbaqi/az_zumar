@@ -24,6 +24,9 @@
             <ul class="drop-content">
               <li><a class="dropdown-item" href="{{ url('/profil_organisasi') }}">Profil</a></li>
               <li><a class="dropdown-item" href="{{ url('/struktur_organisasi') }}">Struktur</a></li>
+              <li><a class="dropdown-item" href="{{ url('/sambutan') }}">Sambutan Kepala</a></li>
+              <li><a class="dropdown-item" href="{{ url('/visimisi') }}">Visi dan Misi</a></li>
+              <li><a class="dropdown-item" href="{{ url('/statistik') }}">Statistik</a></li>
             </ul>
           </li>
           <li class="nav-item <?php echo ($active == 3) ? "active" : ""; ?>">
@@ -47,6 +50,7 @@
               <i class="material-icons">list_alt</i>PPDB <div class="float-right icon"><i class="fa fa-chevron-right"></i></div>
             </a>
             <ul class="drop-content">
+              <li><a class="dropdown-item" href="{{ url('/syarat') }}">Syarat Pendaftaran</a></li>
               <li><a class="dropdown-item" href="{{ url('/tk') }}">TK</a></li>
               <li><a class="dropdown-item" href="{{ url('/sd') }}">SD</a></li>
               <li><a class="dropdown-item" href="{{ url('/smp') }}">SMP</a></li>
@@ -59,7 +63,7 @@
             </a>
             <ul class="drop-content">
               <li><a class="dropdown-item" href="{{ url('/laporan_keuangan') }}">Laporan</a></li>
-              <li><a class="dropdown-item" href="{{ url('/donasi') }}">Donasi</a></li>
+              <li><a class="dropdown-item" href="{{ url('/ddonasi') }}">Donasi</a></li>
             </ul>
           </li> 
           <li class="nav-item <?php echo ($active == 7) ? "active" : ""; ?>">

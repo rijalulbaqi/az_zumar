@@ -8,7 +8,9 @@
               <div class="card">
                 <div class="card-header card-header-success">
                   <h4 class="card-title">PPDB SMP
-                    <button class="btn btn-sm btn-white btn-round float-right" data-toggle="modal" data-target="#tambah"><i class="material-icons">add</i> Tambah</button></h4>
+                    <button class="btn btn-sm btn-white btn-round float-right" data-toggle="modal" data-target="#tambah"><i class="material-icons">add</i> Tambah</button>
+                    <a href="{{ url('smp/exportsmp') }}" target="_blank" class="btn btn-sm btn-white btn-round float-right" style="color: grey;"><i class="material-icons">print</i> Cetak</a>
+                  </h4>
                 </div>
                 <div class="card-body mt-3">
                   <table id="table_id" class="display table w-100">
@@ -189,6 +191,22 @@
                 'Kamu telah menambah data!',
                 'success'
               )
+            }
+            if(data==2){
+              $('#tambah').modal('hide');
+              Swal.fire({
+                icon: 'error',
+                title: 'Mohon Maaf!',
+                text: 'Data atas nama tersebut sudah terdaftar!'
+              })
+            }
+            if(data==0){
+              $('#tambah').modal('hide');
+              Swal.fire({
+                icon: 'error',
+                title: 'Mohon Maaf!',
+                text: 'Anda gagal menginput data!'
+              })
             }
           });
         });
